@@ -14,6 +14,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.Row
+import androidx.compose.material3.ElevatedButton
 import com.example.practice_jetpackcompose.ui.theme.Practice_jetpackComposeTheme
 
 
@@ -46,9 +48,16 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         color = MaterialTheme.colorScheme.primary,
         modifier = modifier.padding(vertical = 4.dp, horizontal = 8.dp)
     ) {
-        Column(modifier = Modifier.fillMaxWidth().padding(24.dp)) {
-            Text(text = "Hello ")
-            Text(text = name)
+        Row(modifier = Modifier.padding(24.dp)) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(text = "Hello ")
+                Text(text = name)
+            }
+            ElevatedButton(
+                onClick = { /* TODO */ }
+            ) {
+                Text("Show more")
+            }
         }
     }
 }
